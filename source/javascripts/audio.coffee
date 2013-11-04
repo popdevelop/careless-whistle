@@ -10,6 +10,7 @@ class _Audio
     spectrumRange: 38
 
   constructor: (opts = {})->
+    return unless _audioContext
     @context = new _audioContext()
     @options = _defaultOptions
     @options[key] = val for key, val of opts
@@ -55,6 +56,7 @@ class _Audio
   onUpdate: (fn) -> _updateCallbacks.push fn
 
   startRecording: =>
+    return unless @context
     @getUserMedia({audio: true}, @setupStream)
 
   getUserMedia:(dictionary, callback) ->

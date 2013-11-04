@@ -6,6 +6,8 @@
 # require pitch
 
 
+alert('Sorry, this login method only works in Chrome') unless window.chrome?
+
 $(Audio.startRecording);
 
 window.Users = [
