@@ -1,0 +1,23 @@
+---
+title: MMHW 2013
+---
+
+#pt-main.pt-perspective
+  .pt-page.login.pt-page-current
+    %h1
+      %strong Login
+    %p
+      Please login by whistling your favorite tune
+    .trigger-pulse
+    .trigger
+      %img{:src => image_path('mic.png')}
+    %ul#password
+
+  .pt-page.logout
+    %h1
+      %strong Welcome
+    %p#name
+    %p
+      %img#avatar
+    %a.button{'href' => 'javascript:void(0);', 'onclick' => 'Authentication.logout()'} Log out
+%canvas#fft{:height=> "300", :width=>"800"}

@@ -1,0 +1,149 @@
+@charset "utf-8";
+@import "normalize";
+@import "pages";
+@import "animations";
+
+body {
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  background: #444;
+}
+
+h2 {
+  font-size: 42px;
+  font-weight: 300;
+  width: 600px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: -220px;
+}
+
+#password {
+  display: block;
+  font-size: 48px;
+  margin: 0;
+  padding: 0;
+  li{
+    display: inline-block;
+    padding-right: 15px;
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+.button {
+  text-decoration: none;
+  color: white;
+  font-size: 21px;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  margin-top: 34px;
+  display: inline-block;
+  letter-spacing: 2px;
+  border: 3px solid #fff;
+  transition: 0.3s;
+  &:hover {
+    background-color: rgba(255,255,255,0.3);
+  }
+}
+
+#avatar {
+  border-radius: 50%;
+  margin-top: 30px;
+}
+
+p {
+  font-size: 25px;
+}
+
+.front, .back {
+  background: #1E8549;
+  color: #EEFBF4;
+  padding: 40px 40px;
+}
+
+.popup {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  margin-left: -200px
+}
+
+#fft {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  margin-left: -400px;
+}
+
+$triggerRadius: 214px;
+$triggerBorder: 8px;
+$pulseMinSize: 8px;
+$pulseMaxSize: 16px;
+
+.trigger {
+  background: #1ABC9C;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -107px;
+  margin-left: -107px;
+  width: 214px;
+  height: 214px;
+  //border: $triggerBorder solid #DEF7E8;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -28px;
+    margin-top: -32px;
+    opacity: 0.7;
+  }
+}
+
+
+.trigger-pulse {
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0.7;
+  margin-top: -($triggerRadius + $pulseMinSize*2)/2;
+  margin-left: -($triggerRadius + $pulseMinSize*2)/2;
+  width: $triggerRadius+$pulseMinSize*2;
+  height: $triggerRadius+$pulseMinSize*2;
+  &.pulsate {
+    -webkit-animation: pulsate 1s infinite;
+  }
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    opacity: 0.5;
+    margin-top: -($triggerRadius + $pulseMinSize*2)/2;
+    margin-left: -($triggerRadius + $pulseMinSize*2)/2;
+    width: $triggerRadius+$pulseMinSize*2;
+    height: $triggerRadius+$pulseMinSize*2;
+  }
+  50% {
+    opacity: 0.9;
+    margin-top: -($triggerRadius + $pulseMaxSize*2)/2;
+    margin-left: -($triggerRadius + $pulseMaxSize*2)/2;
+    width: $triggerRadius+$pulseMaxSize*2;
+    height: $triggerRadius+$pulseMaxSize*2;
+  }
+  100% {
+    opacity: 0.5;
+    margin-top: -($triggerRadius + $pulseMinSize*2)/2;
+    margin-left: -($triggerRadius + $pulseMinSize*2)/2;
+    width: $triggerRadius+$pulseMinSize*2;
+    height: $triggerRadius+$pulseMinSize*2;
+  }
+}

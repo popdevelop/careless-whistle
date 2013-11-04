@@ -1,0 +1,42 @@
+@import "compass";
+
+/* entire container, keeps perspective */
+.flip-container {
+  @include perspective(1000);
+}
+
+.flip-container, .front, .back {
+  width: 320px;
+  height: 380px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  @include transform-style(preserve-3d);
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+  @include backface-visibility(hidden);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+}
+
+/* back, initially hidden pane */
+.back {
+  @include transform(rotateY(180deg));
+}
+
+.flip-container.flip .flipper {
+  @include transform(rotateY(180deg));
+}
