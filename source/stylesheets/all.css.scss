@@ -27,6 +27,7 @@ h2 {
   font-size: 48px;
   margin: 0;
   padding: 0;
+  height: 65px;
   li{
     display: inline-block;
     padding-right: 15px;
@@ -85,6 +86,11 @@ $triggerRadius: 214px;
 $triggerBorder: 8px;
 $pulseMinSize: 8px;
 $pulseMaxSize: 16px;
+
+.mic {
+  position: relative;
+  height: 270px;
+}
 
 .trigger {
   background: #1ABC9C;

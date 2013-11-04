@@ -81,6 +81,8 @@ cWidth = canvas.width
 Audio.onStart ->
   $('.trigger-pulse').addClass('pulsate')
 
+Audio.onError -> alert("There was a problem accessing the audio.\nPlease check permissions.")
+
 Audio.onUpdate ->
   spacing = cWidth / Audio.options.spectrumRange
   ctx.clearRect(0, 0, cWidth, cHeight);
