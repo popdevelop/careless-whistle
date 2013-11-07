@@ -15,6 +15,7 @@ title: Whistle-based Authentication 2013
       .trigger-pulse
       .trigger
         %img{:src => image_path('mic.png')}
+    %canvas#fft{:height=> "300", :width=>"800"}
 
   .pt-page.logout
     %h1
@@ -23,7 +24,6 @@ title: Whistle-based Authentication 2013
     %p
       %img#avatar
     %a.button{'href' => 'javascript:void(0);', 'onclick' => 'Authentication.logout()'} Log out
-%canvas#fft{:height=> "300", :width=>"800"}
 
 %footer
   %a{:href => 'https://userbin.com', :target => '_NEW'}
