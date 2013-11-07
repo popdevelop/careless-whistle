@@ -6,7 +6,7 @@
 # require pitch
 
 
-alert('Sorry, this login method only works in Chrome') unless window.chrome?
+alert('Sorry, this login method only works in Chrome due to HTML5 audio issues') unless window.chrome?
 
 $(Audio.startRecording);
 
